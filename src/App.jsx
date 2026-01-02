@@ -28,23 +28,11 @@ const App = () => {
       {/* Toggle Button */}
 
       <Container>
-        <div className="text-right gap-10 mb-5">
-          <button className="bg-purple-100 text-red-500 px-5 py-1 mb-1 font-bold text-xl rounded-l-xl">
-            {" "}
-            All{" "}
-          </button>
-          <button className="bg-purple-100 text-red-500 px-5 py-1 mb-1 font-bold text-xl">
-            {" "}
-            Pending{" "}
-          </button>
-          <button className="bg-purple-100 text-red-500 px-5 py-1 mb-1 font-bold text-xl">
-            {" "}
-            Submitted{" "}
-          </button>
-          <button className="bg-purple-100 text-red-500 px-5 py-1 mb-1 font-bold text-xl rounded-r-xl">
-            {" "}
-            Reviewed{" "}
-          </button>
+        <div className="text-right gap-10 mb-5 text-amber-300">
+          <button className="toggle-button rounded-l-xl "> All </button>
+          <button className="toggle-button"> Pending </button>
+          <button className="toggle-button"> Submitted </button>
+          <button className="toggle-button rounded-r-2xl"> Reviewed </button>
         </div>
       </Container>
       <Footer></Footer>
