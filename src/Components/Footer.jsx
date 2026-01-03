@@ -1,6 +1,8 @@
+import Container from "./Container";
+
 const Footer = () => {
   return (
-    <container>
+    <Container>
       {" "}
       <footer className="bg-black text-gray-300 px-8 py-12  ">
         <div className="grid md:grid-cols-5 gap-8">
@@ -53,7 +55,7 @@ const Footer = () => {
           <br className="block md:hidden" /> All rights reserved.
         </div>
       </footer>{" "}
-    </container>
+    </Container>
   );
 };
 
