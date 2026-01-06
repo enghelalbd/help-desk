@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Container from "./Components/Container";
 import { useState } from "react";
+import Toggel_btn from "./Components/Toggel_btn";
 
 const App = () => {
   const [togglestatus, setTogglestatus] = useState("all");
@@ -29,46 +30,13 @@ const App = () => {
         </div>
       </Container>
 
+      <Toggel_btn
+        togglestatus={togglestatus}
+        setTogglestatus={setTogglestatus}
+      />
+
       {/* Toggle Button */}
 
-      <Container>
-        <div className="text-right gap-10 mb-5 text-amber-300">
-          <button
-            className={` toggle-button rounded-l-xl  ${
-              togglestatus == "all" && "!bg-amber-500 text-white"
-            }`}
-            onClick={() => setTogglestatus("all")}
-          >
-            All
-          </button>
-
-          <button
-            className={` toggle-button rounded-l-xl  ${
-              togglestatus == "pendingd" && "!bg-amber-500 text-white"
-            }`}
-            onClick={() => setTogglestatus("pendingd")}
-          >
-            {" "}
-            Pending{" "}
-          </button>
-          <button
-            className={` toggle-button rounded-l-xl  ${
-              togglestatus == "Sumitted" && "!bg-amber-500 text-white"
-            }`}
-            onClick={() => setTogglestatus("Sumitted")}
-          >
-            {" "}
-            Submitted{" "}
-          </button>
-          <button
-            className="toggle-button rounded-r-2xl"
-            onClick={() => setTogglestatus("Reviewed")}
-          >
-            {" "}
-            Reviewed{" "}
-          </button>
-        </div>
-      </Container>
       <Footer></Footer>
     </div>
   );
