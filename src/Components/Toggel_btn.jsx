@@ -17,9 +17,9 @@ const Toggel_btn = ({ togglestatus, setTogglestatus }) => {
 
           <button
             className={` toggle-button   ${
-              togglestatus == "pendingd" && "!bg-amber-500 text-white"
+              togglestatus == "pending" && "!bg-amber-500 text-white"
             }`}
-            onClick={() => setTogglestatus("pendingd")}
+            onClick={() => setTogglestatus("pending")}
           >
             {" "}
             Pending{" "}
