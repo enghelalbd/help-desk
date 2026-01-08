@@ -1,3 +1,4 @@
-$ conceptual session MI 07 <br>
-
-$24 Sep Utsho Habib
+$ Conceptual session
+$Live link:https://help-deskbd.netlify.app/
+$ MI07
+$ Oct 24
