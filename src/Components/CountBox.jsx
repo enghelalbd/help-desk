@@ -2,11 +2,11 @@ import React from "react";
 import Container from "./Container";
 
 const CountBox = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   const pendingData = data.filter((element) => element.status == "Pending");
   const submitteddata = data.filter((element) => element.status == "Submitted");
   const revieweddata = data.filter((element) => element.status == "Reviewed");
-  console.log({ pendingData, submitteddata, revieweddata });
+  // console.log({ pendingData, submitteddata, revieweddata });
   return (
     <div>
       <Container>

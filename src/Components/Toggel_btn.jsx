@@ -2,6 +2,7 @@ import React from "react";
 import Container from "./Container";
 
 const Toggel_btn = ({ togglestatus, setTogglestatus }) => {
+  // console.log(togglestatus);
   return (
     <div>
       <Container>
@@ -17,18 +18,18 @@ const Toggel_btn = ({ togglestatus, setTogglestatus }) => {
 
           <button
             className={` toggle-button   ${
-              togglestatus == "pending" && "!bg-amber-500 text-white"
+              togglestatus == "Pending" && "!bg-amber-500 text-white"
             }`}
-            onClick={() => setTogglestatus("pending")}
+            onClick={() => setTogglestatus("Pending")}
           >
             {" "}
             Pending{" "}
           </button>
           <button
             className={` toggle-button   ${
-              togglestatus == "Sumitted" && "!bg-amber-500 text-white"
+              togglestatus == "Submitted" && "!bg-amber-500 text-white"
             }`}
-            onClick={() => setTogglestatus("Sumitted")}
+            onClick={() => setTogglestatus("Submitted")}
           >
             {" "}
             Submitted{" "}

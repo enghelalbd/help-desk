@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import IssuesManagement from "./Components/issuesManagement";
+import Loading from "./Components/Loading";
 
 const fetchIssues = async () => {
   const result = await fetch("/data.json");
@@ -14,7 +15,7 @@ const App = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Suspense fallback={<h2> I am loading </h2>}>
+      <Suspense fallback={<Loading></Loading>}>
         <IssuesManagement fetchPromise={fetchPromise} />
       </Suspense>
 

@@ -8,9 +8,13 @@ import Card from "./Card";
 const IssuesManagement = ({ fetchPromise }) => {
   const initialData = use(fetchPromise);
   const [data, setData] = useState(initialData);
-
   const [togglestatus, setTogglestatus] = useState("all");
-  console.log(togglestatus);
+  // console.log(togglestatus);
+  const filteredData =
+    togglestatus == "all"
+      ? data
+      : data.filter((element) => element.status == togglestatus);
+  console.log(filteredData);
 
   return (
     <div>
@@ -22,9 +26,17 @@ const IssuesManagement = ({ fetchPromise }) => {
       />
       {/* Cards */}
       <Container>
+        {/* {filteredData.length ==0 ? <h2>No issues found</h2>} */}
+        {filteredData.length === 0 && <h2>No issues found</h2>}
+
         <div className="grid grid-cols-3 gap-3">
-          {initialData.map((issue) => (
-            <Card key={issue.ticketId} issue={issue} />
+          {filteredData.map((issue) => (
+            <Card
+              key={issue.ticketId}
+              issue={issue}
+              data={data}
+              setData={setData}
+            />
           ))}
         </div>
       </Container>

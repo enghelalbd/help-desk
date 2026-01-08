@@ -1,9 +1,32 @@
 // Card.jsx
 import React from "react";
 
-const Card = ({ issue }) => {
+const Card = ({ issue, data, setData }) => {
+  console.log(issue.ticketId);
+  const handleClick = () => {
+    console.log("clicked");
+    const expectedData = data.find(
+      (element) => element.ticketId === issue.ticketId
+    );
+
+    if (expectedData.status == "Pending") {
+      expectedData.status = "Submitted";
+    } else if (expectedData.status == "Submitted") {
+      expectedData.status = "Reviewed";
+    }
+
+    const restData = data.filter(
+      (element) => element.ticketId !== issue.ticketId
+    );
+    console.log(expectedData);
+    console.log(restData);
+    setData([expectedData, ...restData]);
+  };
   return (
-    <div className="shadow-md rounded-md cursor-pointer p-4 my-4">
+    <div
+      className="shadow-md rounded-md cursor-pointer p-4 my-4 "
+      onClick={handleClick}
+    >
       <div>
         <img
           src={issue.userImg}
@@ -11,7 +34,6 @@ const Card = ({ issue }) => {
           className="h-[40px] w-[40px] rounded-full object-cover"
         />
       </div>
-
       <div className="flex justify-between items-center mt-2">
         <h2 className="font-bold text-2xl">{issue.subject}</h2>
 
@@ -21,7 +43,6 @@ const Card = ({ issue }) => {
 
         <p className="text-slate-500 mx-4">Status: {issue.status}</p>
       </div>
-
       <p className="text-xl text-slate-700 mt-3">{issue.description}</p>
     </div>
   );
